@@ -1,3 +1,5 @@
+🔗 **Live Demo:** [https://lasyagovindwar.github.io/internship-task-doc/](https://lasyagovindwar.github.io/internship-task-doc/)
+
 # 📄 Internship Task Document
 
 A professional frontend project built with **Handlebars** (templating) and **Vite** (bundler). All page content is driven dynamically from `content.json` — no hardcoded HTML copy.
