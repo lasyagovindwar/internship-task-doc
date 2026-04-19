@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{meta.description}}" />
+    <meta name="author" content="{{meta.author}}" />
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{{meta.title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+
+    {{> header}}
+
+    <main class="main-content">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <span class="hero-badge">{{hero.badge}}</span>
+          <h1 class="hero-title">{{hero.title}}</h1>
+          <p class="hero-subtitle">{{hero.subtitle}}</p>
+          <div class="hero-tags">
+            {{#each hero.tags}}
+              <span class="tag">{{this}}</span>
+            {{/each}}
+          </div>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <div class="deco-ring ring-1"></div>
+          <div class="deco-ring ring-2"></div>
+          <div class="deco-ring ring-3"></div>
+        </div>
+      </section>
+
+      <!-- DYNAMIC SECTIONS -->
+      <div class="sections-wrapper">
+        {{#each sections}}
+          <section id="{{this.id}}" class="doc-section section-type-{{this.type}}">
+            <div class="section-header">
+              <span class="section-emoji" aria-hidden="true">{{this.emoji}}</span>
+              <h2 class="section-title">{{this.title}}</h2>
+            </div>
+
+            <!-- PROSE -->
+            {{#if (eq this.type "prose")}}
+              <div class="section-prose">
+                <p>{{this.content}}</p>
+              </div>
+            {{/if}}
+
+            <!-- CARDS (Tech Stack) -->
+            {{#if (eq this.type "cards")}}
+              <div class="cards-grid">
+                {{#each this.items}}
+                  <div class="card">
+                    <span class="card-icon">{{this.icon}}</span>
+                    <h3 class="card-name">{{this.name}}</h3>
+                    <p class="card-desc">{{this.desc}}</p>
+                  </div>
+                {{/each}}
+              </div>
+            {{/if}}
+
+            <!-- CHECKLIST (Requirements) -->
+            {{#if (eq this.type "checklist")}}
+              <ul class="checklist">
+                {{#each this.items}}
+                  <li class="checklist-item">
+                    <span class="check-icon" aria-hidden="true">✓</span>
+                    <span>{{{this}}}</span>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+
+            <!-- NUMBERED (Deliverables) -->
+            {{#if (eq this.type "numbered")}}
+              <ol class="numbered-list">
+                {{#each this.items}}
+                  <li class="numbered-item">{{{this}}}</li>
+                {{/each}}
+              </ol>
+            {{/if}}
+
+            <!-- TREE (Folder Structure) -->
+            {{#if (eq this.type "tree")}}
+              <div class="file-tree">
+                {{#each this.tree}}
+                  <div class="tree-row depth-{{this.depth}} {{#if this.isDir}}is-dir{{/if}}">
+                    <span class="tree-icon">{{#if this.isDir}}📁{{else}}📄{{/if}}</span>
+                    <span class="tree-label">{{this.label}}</span>
+                  </div>
+                {{/each}}
+              </div>
+            {{/if}}
+
+            <!-- LINKS (Resources) -->
+            {{#if (eq this.type "links")}}
+              <div class="links-list">
+                {{#each this.items}}
+                  <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <div class="link-card-inner">
+                      <div class="link-label">{{this.label}}</div>
+                      <div class="link-desc">{{this.desc}}</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                  </a>
+                {{/each}}
+              </div>
+            {{/if}}
+
+          </section>
+        {{/each}}
+      </div>
+
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>

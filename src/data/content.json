@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "Internship Task Document",
+    "description": "Frontend Internship Technical Assessment — Handlebars + Vite",
+    "favicon": "/assets/images/favicon.svg",
+    "author": "Engineering Team",
+    "year": "2025"
+  },
+  "hero": {
+    "badge": "Internship Assignment",
+    "title": "Frontend Development Task",
+    "subtitle": "Build a dynamic document page using modern tooling",
+    "tags": ["Handlebars", "Vite", "CSS3", "JSON"]
+  },
+  "sections": [
+    {
+      "id": "objective",
+      "emoji": "🎯",
+      "title": "Objective",
+      "type": "prose",
+      "content": "Recreate a professional internship task document webpage using Handlebars as the templating engine and Vite as the bundler. The goal is to demonstrate your ability to work with modern frontend tooling, dynamic data binding, and clean UI design — all within a structured project setup."
+    },
+    {
+      "id": "tech-stack",
+      "emoji": "⚙️",
+      "title": "Tech Stack",
+      "type": "cards",
+      "items": [
+        {
+          "icon": "🖋",
+          "name": "Handlebars",
+          "desc": "Semantic templating engine with partials, helpers, and dynamic data binding from JSON."
+        },
+        {
+          "icon": "⚡",
+          "name": "Vite",
+          "desc": "Lightning-fast build tool with HMR dev server and optimized production builds."
+        },
+        {
+          "icon": "🎨",
+          "name": "CSS3",
+          "desc": "Custom properties, grid/flexbox layout, responsive breakpoints, and smooth transitions."
+        },
+        {
+          "icon": "📦",
+          "name": "Node.js",
+          "desc": "Runtime environment powering the build pipeline, package management, and scripts."
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "emoji": "📋",
+      "title": "Requirements",
+      "type": "checklist",
+      "items": [
+        "Use Handlebars (.hbs) templates — no plain HTML-only approach",
+        "Load all content dynamically from <code>content.json</code>",
+        "Implement reusable Handlebars partials for header and footer",
+        "Configure Vite to process and compile Handlebars templates",
+        "Output final built HTML into the <code>/dist</code> directory",
+        "Enable hot-reload dev server via <code>npm run dev</code>",
+        "Include at least: Title, Sections, Bullet points, and Links",
+        "Create a clean, modern, fully responsive UI",
+        "Add hover effects on all interactive elements",
+        "Include meta tags and a favicon"
+      ]
+    },
+    {
+      "id": "deliverables",
+      "emoji": "📦",
+      "title": "Deliverables",
+      "type": "numbered",
+      "items": [
+        "Complete project source code with the specified folder structure",
+        "Fully configured <code>vite.config.js</code> with Handlebars plugin",
+        "Working <code>src/templates/index.hbs</code> using dynamic placeholders",
+        "At least two Handlebars partials (header and footer)",
+        "Populated <code>src/data/content.json</code> with all page content",
+        "Polished <code>src/assets/css/style.css</code> with responsive design",
+        "A comprehensive <code>README.md</code> with setup instructions"
+      ]
+    },
+    {
+      "id": "folder-structure",
+      "emoji": "🗂️",
+      "title": "Folder Structure",
+      "type": "tree",
+      "tree": [
+        { "depth": 0, "label": "project-root/", "isDir": true },
+        { "depth": 1, "label": "src/", "isDir": true },
+        { "depth": 2, "label": "templates/", "isDir": true },
+        { "depth": 3, "label": "index.hbs", "isDir": false },
+        { "depth": 3, "label": "partials/", "isDir": true },
+        { "depth": 4, "label": "header.hbs", "isDir": false },
+        { "depth": 4, "label": "footer.hbs", "isDir": false },
+        { "depth": 2, "label": "assets/", "isDir": true },
+        { "depth": 3, "label": "css/style.css", "isDir": false },
+        { "depth": 3, "label": "js/main.js", "isDir": false },
+        { "depth": 3, "label": "images/favicon.svg", "isDir": false },
+        { "depth": 2, "label": "data/content.json", "isDir": false },
+        { "depth": 1, "label": "dist/", "isDir": true },
+        { "depth": 1, "label": "package.json", "isDir": false },
+        { "depth": 1, "label": "vite.config.js", "isDir": false },
+        { "depth": 1, "label": "README.md", "isDir": false }
+      ]
+    },
+    {
+      "id": "resources",
+      "emoji": "🔗",
+      "title": "Useful Links",
+      "type": "links",
+      "items": [
+        {
+          "label": "Handlebars.js Documentation",
+          "url": "https://handlebarsjs.com/guide/",
+          "desc": "Official guide covering expressions, partials, helpers, and built-in blocks."
+        },
+        {
+          "label": "Vite Official Docs",
+          "url": "https://vitejs.dev/guide/",
+          "desc": "Configuration, plugins, build options, and the complete Vite API reference."
+        },
+        {
+          "label": "vite-plugin-handlebars",
+          "url": "https://github.com/alexlafroscia/vite-plugin-handlebars",
+          "desc": "The plugin that bridges Vite's build pipeline with Handlebars template processing."
+        },
+        {
+          "label": "MDN CSS Reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+          "desc": "Complete reference for CSS properties, selectors, and modern layout techniques."
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "note": "This document is part of a frontend internship evaluation.",
+    "contact": "intern@company.dev"
+  }
+}
