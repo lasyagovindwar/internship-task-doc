@@ -14,6 +14,7 @@ const content = JSON.parse(
 Handlebars.registerHelper('eq', (a, b) => a === b);
 
 export default defineConfig({
+  base: '/internship-task-doc/',
   root: 'src',
   publicDir: resolve(__dirname, 'public'),
 
